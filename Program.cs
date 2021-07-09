@@ -10,27 +10,30 @@ namespace CountOfParityHW
     {
         static void Main(string[] args)
         {
-           int lowerLimitOfRange, uperLimitOfRange, resultOfOperation, countOfParity, countOfOddness;
+           int lowerLimitOfRange, uperLimitOfRange, resultOfOperation, countOfParity, countOfOdd, curentInteger;
             countOfParity = 0;
-            countOfOddness = 0;
+            countOfOdd = 0;
 
             Console.WriteLine("Введите нижнюю границу диапозона:");
             lowerLimitOfRange = int.Parse(Console.ReadLine());
+            curentInteger = lowerLimitOfRange;
 
             Console.WriteLine("Введите верхнюю границу диапозона");
             uperLimitOfRange = int.Parse(Console.ReadLine());
 
-            while (lowerLimitOfRange <= uperLimitOfRange) 
+            while (curentInteger <= uperLimitOfRange) 
             {
-                resultOfOperation = lowerLimitOfRange % 2;
-                switch (resultOfOperation) 
-                {
-                    case 0:
-                        countOfParity++;
-                        break;
-                }
-                    
-            }
+                resultOfOperation = curentInteger % 2;
+
+                if (resultOfOperation == 0)
+                    countOfParity++;
+                else
+                    countOfOdd++;
+
+                curentInteger++;
+             }
+
+            Console.WriteLine("Количество четных чисел в диапозоне равняется: " + countOfParity + " Количество нечетных чисел ровняется: " + countOfOdd);
         }
     }
 }
