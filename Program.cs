@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CountOfParityHW
 {
@@ -13,13 +9,25 @@ namespace CountOfParityHW
            int lowerLimitOfRange, uperLimitOfRange, resultOfOperation, countOfParity, countOfOdd, curentInteger;
             countOfParity = 0;
             countOfOdd = 0;
+            lowerLimitOfRange = 0;
+            uperLimitOfRange = 0;
 
-            Console.WriteLine("Введите нижнюю границу диапозона:");
-            lowerLimitOfRange = int.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Введите нижнюю границу диапозона:");
+                lowerLimitOfRange = int.Parse(Console.ReadLine());
+                
+
+                Console.WriteLine("Введите верхнюю границу диапозона");
+                uperLimitOfRange = int.Parse(Console.ReadLine());
+            }
+            catch (Exception) 
+            {
+                Console.WriteLine("Вы ввели неккоректные данные");
+                Environment.Exit(0);
+            }
+
             curentInteger = lowerLimitOfRange;
-
-            Console.WriteLine("Введите верхнюю границу диапозона");
-            uperLimitOfRange = int.Parse(Console.ReadLine());
 
             while (curentInteger <= uperLimitOfRange) 
             {
