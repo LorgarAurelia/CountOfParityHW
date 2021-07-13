@@ -41,6 +41,7 @@ namespace CountOfParityHW
              }
 
             Console.WriteLine("Количество четных чисел в диапозоне равняется: " + countOfEven + " Количество нечетных чисел ровняется: " + countOfOdd);
+            Console.ReadLine();
         }
     }
 }
